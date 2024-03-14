@@ -1,3 +1,4 @@
+import { TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { LitElement, html, css } from "lit-element";
 
@@ -11,7 +12,7 @@ export class MyElement extends LitElement {
     }
   `;
 
-  render(): unknown {
+  render(): TemplateResult {
     return html` <p>Hello, LitElement!</p> `;
   }
 }
