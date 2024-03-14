@@ -4,6 +4,7 @@ module.exports = {
     "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
   ],
   plugins: ["@typescript-eslint", "eslint-plugin-tsdoc", "import"],
   env: {
