@@ -4,7 +4,7 @@ module.exports = {
     "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:prettier/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
   ],
   plugins: ["@typescript-eslint", "eslint-plugin-tsdoc", "import"],
   env: {
@@ -21,7 +21,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  ignorePatterns: ["/src/main/generated/*", "/target/*"],
+  ignorePatterns: ["/src/main/generated/*", "/target/*", "/dist/*"],
   rules: {
     "import/order": [
       "warn",

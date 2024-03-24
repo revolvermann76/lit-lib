@@ -2,41 +2,41 @@
   "name": "lit-lib",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p tsconfig.json",
-    "watch": "tsc -p tsconfig.json --watch",
-    "rollup": "rollup -c",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "webpack --config webpack.config.js --env mode=production",
+    "build:dev": "webpack --config webpack.config.js --env mode=development",
+    "storybook": "storybook dev -p 6006  -c tools/storybook --debug-webpack",
+    "build-storybook": "storybook build -c tools/storybook"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/revolvermann76/lit-lib.git"
   },
+  "keywords": [
+    "lit",
+    "webcomponent"
+  ],
   "author": "Marc Langer",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/revolvermann76/lit-lib/issues"
   },
   "homepage": "https://github.com/revolvermann76/lit-lib#readme",
-  "dependencies": {
-    "lit": "~3.1.2"
-  },
   "devDependencies": {
-    "@chromatic-com/storybook": "~1.2.18",
+    "@chromatic-com/storybook": "~1.2.25",
     "@microsoft/tsdoc": "~0.14.2",
     "@microsoft/tsdoc-config": "~0.16.2",
-    "@rollup/plugin-typescript": "~11.1.6",
-    "@storybook/addon-essentials": "~8.0.0",
-    "@storybook/addon-links": "~8.0.0",
-    "@storybook/blocks": "~8.0.0",
-    "@storybook/test": "~8.0.0",
-    "@storybook/web-components": "~8.0.0",
-    "@storybook/web-components-vite": "~8.0.0",
-    "@typescript-eslint/eslint-plugin": "~7.2.0",
-    "@typescript-eslint/parser": "~7.2.0",
+    "@storybook/addon-essentials": "~8.0.2",
+    "@storybook/addon-links": "~8.0.2",
+    "@storybook/addon-webpack5-compiler-swc": "~1.0.2",
+    "@storybook/blocks": "~8.0.2",
+    "@storybook/test": "~8.0.2",
+    "@storybook/web-components": "~8.0.2",
+    "@storybook/web-components-webpack5": "~8.0.2",
+    "@typescript-eslint/eslint-plugin": "~7.3.1",
+    "@typescript-eslint/parser": "~7.3.1",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "~9.1.0",
     "eslint-plugin-import": "~2.29.1",
@@ -44,8 +44,15 @@
     "eslint-plugin-storybook": "~0.8.0",
     "eslint-plugin-tsdoc": "~0.2.17",
     "prettier": "~3.2.5",
-    "rollup": "~4.13.0",
-    "storybook": "~8.0.0",
-    "typescript": "~5.4.2"
+    "raw-loader": "^4.0.2",
+    "storybook": "~8.0.2",
+    "terser-webpack-plugin": "~5.3.10",
+    "ts-loader": "~9.5.1",
+    "typescript": "~5.4.2",
+    "webpack": "~5.90.3",
+    "webpack-cli": "~5.1.4"
+  },
+  "dependencies": {
+    "lit": "~3.1.2"
   }
 }
