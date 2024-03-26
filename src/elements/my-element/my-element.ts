@@ -1,8 +1,10 @@
 import { TemplateResult } from "lit";
+import { unsafeCSS } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { LitElement, html, css } from "lit-element";
 
+import style from "./my-element.css";
 import tpl from "./my-element.html";
 
 @customElement("my-element")
@@ -12,11 +14,7 @@ export class MyElement extends LitElement {
   }
 
   static styles = css`
-    :host {
-      display: block;
-      padding: 16px;
-      background-color: #f0f0f0;
-    }
+    ${unsafeCSS(style)}
   `;
 
   render(): TemplateResult {
