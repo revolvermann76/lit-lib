@@ -4,7 +4,7 @@ import { property, customElement } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { LitElement, html, css } from "lit-element";
 
-import style from "./icon.css";
+import style from "./style.css";
 
 @customElement("lit-icon")
 export class LitIcon extends LitElement {

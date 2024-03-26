@@ -1,14 +1,17 @@
 import { TemplateResult } from "lit";
 import { unsafeCSS } from "lit";
-import { customElement } from "lit/decorators/custom-element.js";
+import { property, customElement } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { LitElement, html, css } from "lit-element";
 
-import style from "./button.css";
-import tpl from "./button.html";
+import style from "./style.css";
+import tpl from "./template.html";
 
-@customElement("lit-button")
-export class LitButton extends LitElement {
+@customElement("lit-textfield")
+export class LitTextfield extends LitElement {
+  @property()
+  size: "small" | "medium" | "large" = "medium";
+
   static styles = css`
     ${unsafeCSS(style)}
   `;

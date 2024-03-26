@@ -1,10 +1,10 @@
-import { LitButton } from "../../dist/lit-lib";
+import { Button } from "../../dist/lit-lib";
 
 import type { Meta, StoryObj } from "@storybook/web-components";
 
 const meta: Meta = {
   title: "Lit/Button",
-  render: (args) => new LitButton(),
+  render: (args) => new Button(),
 };
 
 export default meta;

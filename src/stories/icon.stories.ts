@@ -1,11 +1,11 @@
-import { LitIcon } from "../../dist/lit-lib";
+import { Icon } from "../../dist/lit-lib";
 
-import type { IIconProperties } from "../elements/icon/icon";
+import type { IIconProperties } from "../elements/icon/LitIcon";
 import type { Meta, StoryObj } from "@storybook/web-components";
 
 const meta: Meta = {
   title: "Lit/Icon",
-  render: (args) => new LitIcon(args),
+  render: (args) => new Icon(args),
   argTypes: {
     size: {
       control: { type: "select" },
