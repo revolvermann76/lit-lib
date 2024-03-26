@@ -22,4 +22,4 @@ export class MyElement extends LitElement {
   render(): TemplateResult {
     return html`${unsafeHTML(tpl)}`;
   }
-} 
+}
