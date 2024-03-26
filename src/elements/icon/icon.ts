@@ -21,8 +21,16 @@ export class LitIcon extends LitElement {
     ${unsafeCSS(style)}
   `;
 
-  constructor(args?: unknown) {
+  constructor(props?: IIconProperties) {
     super();
+    if (props) {
+      if (props.size) {
+        this.size = props.size;
+      }
+      if (props.icon) {
+        this.icon = props.icon;
+      }
+    }
   }
 
   render(): TemplateResult {
@@ -33,4 +41,9 @@ export class LitIcon extends LitElement {
       </style>
       <span class="${this.font} ${this.icon} ${this.size}" />`;
   }
+}
+
+export interface IIconProperties {
+  size?: "small" | "medium" | "large";
+  icon?: string;
 }
