@@ -1,7 +1,11 @@
 export { MyElement } from "./elements/my-element/my-element";
 
 /* buttons */
-export { LitButton as Button } from "./elements/buttons/button/LitButton";
+export {
+  LitButton as Button,
+  IButtonProperties,
+} from "./elements/buttons/button/LitButton";
+
 export { LitIconButton as IconButton } from "./elements/buttons/icon-button/LitIconButton";
 
 /* grafics */

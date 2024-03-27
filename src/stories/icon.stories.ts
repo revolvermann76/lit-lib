@@ -9,7 +9,7 @@ const meta: Meta = {
   argTypes: {
     size: {
       control: { type: "select" },
-      options: ["small", "medium", "large"],
+      options: ["xs", "small", "medium", "large", "xl", "xxl", "xxxl"],
       description: "The size of the icon",
     },
     icon: {
@@ -17,8 +17,12 @@ const meta: Meta = {
       options: ["fa-cube", "fa-house", "fa-search"],
       description: "The icon symbol",
     },
+    scaleFactor: {
+      control: { type: "number", min: 0.5, max: 100, step: 0.1 },
+      default: 1.0,
+    },
   },
-} satisfies Meta<IIconProperties>;
+};
 
 export default meta;
 
