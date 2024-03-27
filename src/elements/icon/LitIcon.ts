@@ -5,6 +5,18 @@ import { LitElement, html, css } from "lit-element";
 
 import style from "./style.css";
 
+// Fonts müssen für WebComponents sowohl in der Component, als auch im Head der Seite verlinkt werden. Das stellt dieser Helper sicher.
+function applyFontGlobal(fontUrl): void {
+  if (!document.querySelector(`link[href="${fontUrl}}"]`)) {
+    document.head.append(
+      Object.assign(document.createElement("link"), {
+        rel: "stylesheet",
+        href: fontUrl,
+      }),
+    );
+  }
+}
+
 @customElement("lit-icon")
 export class LitIcon extends LitElement {
   @property()
@@ -26,18 +38,11 @@ export class LitIcon extends LitElement {
   constructor(props?: IIconProperties) {
     super();
 
-    if (!document.querySelector(`link[href="$this.fontUrl}"]`)) {
-      document.head.append(
-        Object.assign(document.createElement("link"), {
-          rel: "stylesheet",
-          href: this.fontUrl,
-        }),
-      );
-    }
-
     if (props) {
       Object.assign(this, props);
     }
+
+    applyFontGlobal(this.fontUrl);
   }
 
   render(): TemplateResult {
