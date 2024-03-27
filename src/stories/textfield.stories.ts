@@ -3,7 +3,7 @@ import { Textfield } from "../../dist/lit-lib";
 import type { Meta, StoryObj } from "@storybook/web-components";
 
 const meta: Meta = {
-  title: "Lit/Textfield",
+  title: "Lit/inputs/Textfield",
   render: (args) => new Textfield(),
 };
 
