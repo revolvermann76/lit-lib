@@ -8,26 +8,10 @@ import { lg, md, sm } from "src/types/sizes";
 import style from "./style.css";
 import tpl from "./template.html";
 
-@customElement("lit-button")
-export class LitButton extends LitElement {
-  static styles = css`
-    ${unsafeCSS(style)}
-  `;
-
-  constructor(args?: unknown) {
-    super();
-  }
-
-  render(): TemplateResult {
-    return html`${unsafeHTML(tpl)}`;
-  }
-}
-
-export interface IButtonProperties {
-  scale?: sm | md | lg;
+interface IButtonProperties {
   variant?: "default" | "primary" | "secodary" | "delete";
+  scale?: sm | md | lg;
   icon?: string;
-  fontURL?: string;
   disabled?: boolean;
   isLoading?: boolean;
   type?: "button" | "submit" | "reset";
@@ -35,5 +19,24 @@ export interface IButtonProperties {
   tooltip?: string;
   ariaLabel?: string;
   isLoadingText?: String;
-  tabIndex?: string;
+  tabindex?: number;
 }
+
+@customElement("lit-button")
+class LitButton extends LitElement {
+  static styles = css`
+    ${unsafeCSS(style)}
+  `;
+
+  constructor(props?: IButtonProperties) {
+    super();
+    props = props || {};
+    Object.assign(this, props || {});
+  }
+
+  render(): TemplateResult {
+    return html`${unsafeHTML(tpl)}`;
+  }
+}
+
+export { LitButton, IButtonProperties };
